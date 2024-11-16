@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramak</title>
+    <style>
+        :root {
+            --main-color: #00587a;
+            --secondary-color: #8dd3d4;
+            --white-color: #ffffff;
+            --highlight-color: #f39c12;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--main-color);
+            background-color: var(--white-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--main-color);
+            color: var(--white-color);
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .about-section img {
+            max-width: 250px;
+        }
+
+        .about-section h1 {
+            font-size: 2.5em;
+            color: var(--main-color);
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            color: var(--main-color);
+            line-height: 1.8;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin: 40px 0;
+        }
+
+        .flip-box {
+            background-color: transparent;
+            perspective: 1000px;
+        }
+
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            background: var(--secondary-color);
+        }
+
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-box-front, .flip-box-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            color: var(--white-color);
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .flip-box-front {
+            background-color: var(--secondary-color);
+        }
+
+        .flip-box-back {
+            background-color: var(--main-color);
+            transform: rotateY(180deg);
+        }
+
+        .feedback-section {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .feedback-section h2 {
+            margin-bottom: 15px;
+            color: var(--main-color);
+        }
+
+        .feedback-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback-section label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: var(--main-color);
+        }
+
+        .feedback-section input, .feedback-section textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .star-rating {
+            display: flex;
+            direction: ltr;
+            justify-content: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 30px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: var(--highlight-color);
+        }
+
+        .feedback-section button {
+            padding: 12px;
+            background: var(--main-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .feedback-section button:hover {
+            background: var(--secondary-color);
+        }
+
+        footer {
+            background: var(--main-color);
+            color: var(--white-color);
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Ramak.png" alt="Logo">
+    </header>
+
+    <main>
+        <section class="about-section">
+            <div>
+                <h1>من نحن؟</h1>
+                <p>نحن في "رمق" نؤمن بأن التميز في تقديم الخدمات الطبية يبدأ من التواصل الفعّال. نقدم حلولاً تسويقية مبتكرة.</p>
+                <p>نضمن لكم الوصول إلى جمهوركم المستهدف بطريقة احترافية ودقيقة.</p>
+                <p>هدفنا تحقيق نجاح مستدام ومميز لعياداتكم.</p>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">إدارة الحملات الإعلانية</div>
+                    <div class="flip-box-back">نصمم وننفذ حملات مخصصة للوصول إلى الفئات المستهدفة.</div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">جمع قاعدة عملاء محتملين</div>
+                    <div class="flip-box-back">نستهدف جمهوراً جديداً لدعم نمو عيادتكم.</div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">تدريب الموظفين</div>
+                    <div class="flip-box-back">تدريبات لتحسين مهارات الإقناع والحجز.</div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">تنشيط العملاء القدامى</div>
+                    <div class="flip-box-back">نعيد التواصل مع المرضى السابقين بأساليب فعالة.</div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">التواصل المستمر</div>
+                    <div class="flip-box-back">استراتيجيات لبناء ولاء المرضى الحاليين.</div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">استراتيجيات مبتكرة</div>
+                    <div class="flip-box-back">حلول جديدة لتعزيز وجودكم في السوق الطبي.</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="feedback-section">
+            <h2>اترك تعليقك وتقييمك</h2>
+            <form>
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="comment">التعليق:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+
+                <label>التقييم:</label>
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                </div>
+
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        جميع الحقوق محفوظة © رمق 2024
+        <br>
+        <a href="https://wsend.co/966559358611" target="_blank">تواصلوا معنا عبر الواتساب</a>
+    </footer>
+
+    <script>
+        document.getElementById('feedback-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+            const rating = document.querySelector('input[name="rating"]:checked')?.value || 0;
+
+            const feedbackList = document.getElementById('feedback-list');
+            const newFeedback = document.createElement('div');
+            newFeedback.className = 'feedback-item';
+            newFeedback.innerHTML = `<strong>${name}:</strong> <em>${comment}</em> <br> تقييم: ${rating} نجوم`;
+
+            feedbackList.prepend(newFeedback);
+
+            this.reset();
+        });
+    </script>
+</body>
+</html>
